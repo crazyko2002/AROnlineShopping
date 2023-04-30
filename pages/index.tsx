@@ -32,8 +32,9 @@ export default function Home({ productData }: Props) {
 
   // ========== SSR data fetching start here ==============
 export const getServerSideProps = async() => {
-    const apiUrl = process.env.NEXT_PUBLIC_API_BASE_URL + "/api/productdata";
-    const productData = await (await fetch(apiUrl)).json();
+  const productData = await (
+    await fetch("http:http:ar-online-shopping.vercel.app/api/productdata")
+      ).json();
 
     return{
       props: {productData},
